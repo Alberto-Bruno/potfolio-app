@@ -42,7 +42,7 @@ body {
 }
 
 .container {
-  width: var(--container-witdh-lg);
+  width: var(--container-width-lg);
   margin-inline: auto;
   max-width: 1920px;
 }
