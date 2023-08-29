@@ -1,18 +1,26 @@
 nav {
-  background: var(--color-primary);
+  background: var(--color-white);
   width: 100vw;
   height: 5rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9;
-  box-shadow: 0.1rem 1.5rem hsla(var(--color-primary), 68%, 42%, 20%);
   transition: var(--transition);
+}
+
+nav a {
+  color: var(--color-black);
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--color-primary);
 }
 
 .nav-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
 }
@@ -30,7 +38,7 @@ nav {
 
 #theme-icon {
   background: transparent;
-  color: white;
+  color: black;
   font-size: 2rem;
   cursor: pointer;
 }
