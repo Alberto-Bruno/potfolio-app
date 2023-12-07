@@ -22,9 +22,10 @@
   --color-bg: #1f1f38;
   --color-bg-variant: #2c2c6c;
   --color-primary: #4db5ff;
-  --color-primary-variant: rgba(77, 181, 255, 0.4);
+  --color-primary-variant: #755ed2;
   --color-white: #fff;
   --color-light: #f4f5f7;
+  --color-light-buttom: #cac9c9;
   --color-black: #000000;
 }
 
@@ -47,13 +48,17 @@ body {
 /* Sections */
 section {
   padding: 10rem 0;
-  background: var(--color-light);
+  background: var(--color-white);
   transition: var(--transition);
 }
 
+/*
+
 section:nth-child(even) {
-  background: var(--color-white);
+  background: var(--color-light);
 }
+
+*/
 
 section > h1 {
   text-align: center;

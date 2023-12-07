@@ -19,7 +19,7 @@ function Header() {
         </p>
         <div className='header-cta'>
           <a href="#contact" className='btn primary'>Conoscimi di più</a>
-          <a href="#portfolio" className='btn light'>Lavoro</a>
+          <a href="#projects" className='btn light'>Lavoro</a>
         </div>
         <div className="header-socials">
           {

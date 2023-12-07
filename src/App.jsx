@@ -1,10 +1,8 @@
 import React from "react";
 import Navbar from './sections/navbar/Navbar';
 import Header from './sections/header/Header';
-import About from './sections/about/About';
 import Services from './sections/services/Services';
 import Projects from './sections/projects/Projects';
-import Testimonials from './sections/testimonials/Testimonials';
 import Experience from './sections/experience/Experience';
 import Contact from './sections/contact/Contact';
 import Footer from './sections/footer/Footer';
@@ -15,11 +13,9 @@ const App = () => {
     <main>
       <Navbar />
       <Header />
-      <About />
+      <Services />
       <Experience />
       <Projects />
-      <Services />
-      <Testimonials />
       <Contact />
       <Footer />
       <Nav />
