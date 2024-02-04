@@ -1,0 +1,59 @@
+nav {
+  background: var(--color-white);
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  transition: var(--transition);
+}
+
+nav a {
+  color: var(--color-black);
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--color-primary);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-logo {
+  width: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+nav button {
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+#theme-icon {
+  background: transparent;
+  color: black;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Nascondere Nav menu (tablet e phone) */
+@media screen and (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+  .nav-container {
+    justify-content: space-between;
+  }
+}
