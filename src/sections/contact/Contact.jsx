@@ -1,27 +1,41 @@
 import { FaWhatsapp } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
-import { useRef } from "react";
-import emailjs from "emailjs-com"
+import React, { useState } from "react";
+import emailjs from 'emailjs-com';
 import './contact.css'
 
 function Contact() {
-  const form = useRef();
-  
-  const sendEmail = (e) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm('service_35wrdpa', 'template_1cpbvpg', form.current, {
-        publicKey: 'y9dIPhrlwifYJiKpa',
+    emailjs.send('service_35wrdpa', 'template_1cpbvpg', formData, 'y9dIPhrlwifYJiKpa')
+      .then((response) => {
+        console.log('Email inviata con successo:', response);
       })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
+      .catch((error) => {
+        console.error('Errore durante l\'invio dell\'email:', error);
+      });
+
+    // Pulisci il modulo dopo l'invio
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
   };
   return (
     <section id='contact'>
@@ -45,10 +59,10 @@ function Contact() {
           </article>
         </div>
 
-        <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name="name" placeholder="Nome e cognome" required/>
-          <input type="email" name="email" placeholder="E-mail" required/>
-          <textarea name="message" rows="7" placeholder="Scrivi messaggio" required></textarea>
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="name" value={formData.name} placeholder="Nome e cognome" onChange={handleChange}/>
+          <input type="email" name="email" value={formData.email} placeholder="E-mail" onChange={handleChange}/>
+          <textarea name="message" rows="7" value={formData.message} placeholder="Scrivi messaggio" onChange={handleChange}></textarea>
           <input type="submit" value="Invia messaggio" className="btn btn primary" />
         </form>
       </div> 
